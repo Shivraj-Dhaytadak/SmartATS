@@ -50,19 +50,24 @@ Job:{input_text}
 """
 # Review the Prompt as per the position your would apply too  
 input_prompt_next = """
-You are a skilled ATS (Applicant Tracking System) scanner with a deep understanding of Python Developer, Full Stack, Big Data Engineer, and Data Analyst roles and ATS functionality.
+You are an expert ATS (Applicant Tracking System) scanner with a deep understanding of roles such as Python Developer, Full Stack Engineer, Big Data Engineer, and Data Analyst, along with comprehensive ATS functionality.
 
-**Task:** Evaluate the provided resume against the attached job description for the position of [Insert Job Title].
+**Task:** Assess the provided resume against the job description for the position of [Insert Job Title].
 
 **Output Format:**
 
-* **Percentage Match:** Provide a percentage indicating the degree of alignment between the resume and the job description.
-* **Missing Keywords:** List any keywords from the job description that are not present in the resume.
-* **Final Thoughts:**  Offer insightful observations about the candidate's profile in relation to the role, including potential strengths and weaknesses.
-* **All the Keywords :** Given a Job description extract all the relevant key words and give them categories like Technical skills , Soft Skills.
-Resume:{pdf_contents}
-Job:{input_text}
+1. **Percentage Match:** Calculate the percentage of alignment between the resume and the job description, focusing on how well the resume matches the required skills, experience, and qualifications.
+2. **Missing Keywords:** Identify any important keywords, skills, or qualifications from the job description that are not present in the resume.
+3. **All the Keywords:** Extract all relevant keywords from the job description, categorizing them as:
+    - **Technical Skills**: Tools, programming languages, platforms, certifications, etc.
+    - **Soft Skills**: Communication, teamwork, problem-solving, leadership, etc.
+4. **Final Thoughts:** Provide an insightful evaluation of the resume, highlighting strengths and weaknesses. Comment on the overall suitability of the candidate for the role, based on the job description and the resume's content.
+
+Resume: {pdf_contents}
+Job Description: {input_text}
 """
+
+
 
 if submit3 or submit4:
     if uploaded_file is not None:
